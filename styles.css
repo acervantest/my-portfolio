@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --base: #555;
+    --base-100: #f1f1f1;
+    --base-400: #555;
+    --base-800: #000;
+    --yellow: #ffda4b;
+    --yellow-100: #fffbe6;
+    --yellow-400: #ffda4b;
+    --yellow-800: #8b6f00;
+    --blue: #0a61ae;
+    --blue-100: #e2f8ff;
+    --blue-400: #61dafb;
+    --blue-800: #0a61ae; 
+}
+
+body {
+    font-family: "Nunito", serif;
+    font-size: 1.25rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--blue);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+    .logo-wrapper {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        color: var(--base-800);
+        
+        .logo {
+            background-color: var(--base-800);
+            color: var(--base-100);
+
+            width: 4rem;
+            height: 4rem;
+            margin-right: 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            font-weight: bold;
+            font-size: 2rem;
+
+            border-radius: 50%;
+        }
+
+        .logo-text {
+            flex: 1;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        flex-direction: column;
+        align-items: center;
+        nav {
+            ul {
+                margin-top: 10px;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+
+        nav { 
+            margin-top: 10px;
+            width: 100%;
+
+            ul {
+                display: none;
+                
+                &.active {
+                     display: flex;
+                     flex-direction: column;
+                     text-align: center;
+                     width: 100%;
+                }
+
+                a {
+                 width: 100%;       
+                }
+            }
+        }
+    }
+}
+
+nav {
+    display: flex;
+    align-items: center;
+
+    ul {
+        display: flex;
+        list-style: none;
+        gap: 10px;
+
+        li {
+            display: inline-block;
+            
+            a {
+                display: inline-block;
+                padding: 10px 20px;
+                color: var(--base);
+                &:hover {
+                    background-color: var(--base-100);
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+
+    .mobile-toggle {
+        display: none;
+        color: var(--base-800);
+
+        @media (max-width: 768px) {
+            display: inline-block;
+            position: absolute;
+            top: 30px;
+            right: 30px;
+        }
+    }
+}
+
