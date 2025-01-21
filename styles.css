@@ -143,6 +143,12 @@ header {
 
 main {
 
+    section {
+        max-width: 1200px;
+        margin: auto;
+        margin-top: 30px;
+    }
+
     .button {
         display: inline-block;
         padding: 10px 30px;
@@ -173,11 +179,8 @@ main {
     }
 
     .hero {
-        max-width: 1200px;
-        margin: auto;
         display: flex; 
         gap: 30px;
-        margin-top: 30px;
 
         .hero-left {
             flex: 1;
@@ -238,5 +241,39 @@ main {
         @media (max-width: 1024px) {
             flex-direction: column;
         }
+    }
+
+    .logos {
+        background-color: var(--base-100);
+        border-radius: 30px;
+        padding: 30px 0;
+        
+        .marquee {
+            width: 100%;
+            height: 128px;
+            overflow: hidden;
+            position: relative;
+            .track {
+                position: absolute;
+                white-space: nowrap;
+                will-change: transform;
+                animation: marquee 40s linear infinite;
+                display: flex;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            border-radius: 0px;
+        }
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
     }
 }
